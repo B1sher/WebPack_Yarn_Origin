@@ -1,0 +1,68 @@
+1. Установить NodeJS		https://nodejs.org/en/
+2. Установить Yarn			https://yarnpkg.com/lang/en/docs/install/
+3. Установить Git			https://git-scm.com/downloads
+	
+4. Инициализация нового проекта Yarn: yarn init -y (Создает package.json в папке проекта, отвечая автоматически на все вопросы)
+	
+	Команды Yarn:
+	- Добавление зависимости: yarn add [name] - в dependencis и yarn add [name] -D - в dev
+	- Обновление зависимости: yarn upgrade [name]
+	- Удаление зависимости: yarn remove [name]
+	- Установка зависимостей уже имеющихся зависимостей: yarn
+	- Вывод списка зависимостей: - yarn list и yarn list --depth0
+	- Работы в оффлайне из кеша: - yarn add name --offline . Укажет кешированные версии и нужно выбрать, добавив к названию модуля версию. Напр. name@1.5
+	
+	- Подробнее: https://yarnpkg.com/en/docs/cli/
+
+5.  Инициализация git репозитория в папке проекта: git init
+
+	5.1 	Создание гитигнор файла в корне проекта с именем: .gitignore
+				- Добавить в игнор папку зависимостей проекта: node_modules
+				- И возможные скрытые папки редактора кода, например phpstorm и других.
+	5.2		Анализ всех внесенных изменений (Анализ текущей директории): git add .
+	5.3		Статус: git status
+	5.4		Коммит, отслеженных изменений в гит: git commit -m "name" ("-m" прикрепляет к коммиту message, а в скобочках указывается текст сообщения)
+	
+	- Подробнее: https://git-scm.com/doc
+
+6. Необходимые плагины
+
+	6.1 DevDependencies, устанавливаемые с флагом -D (yarn add [name] -D):
+	
+	1.		webpack							- 
+	2.		webpack-dev-server				- 
+	3.		webpack-merge					- 
+	4.		pug								- 
+	5.		pug-loader						- 
+	6.		node-sass						- 
+	7.		sass-loader						- 
+	8.		css-loader						- 
+	9.		extract-text-webpack-plugin		- 
+	10.		file-loader						- 
+	11.		html-webpack-plugin				- 
+	12.		node-static						- 
+	13.		style-loader					- 
+	
+	6.2 Dependencies, без флага (yarn add [name]):
+	
+	1.		jquery							-
+	2.		normalize.css					-
+
+	6.3 Либо скопировать шаблон проекта и установить плагины, уже внесенные в package.json командой "yarn".
+
+7. Скрипты: для создания скриптов yarn, нужно прописать их в package.json, например после строки "license", создать строку: 
+
+	"scripts": { 
+		"start": "webpack-dev-server --env development"", 
+		"build": "webpack --env production", 
+		"serv": "static build"
+	},
+	
+8. В корне проекта создать файл "webpack.config.js" и заполнить следуюшим образом (либо скачать): (ссылка)
+9. Создать в корне проекта папку "webpack" и заполнить следующими файлами: (ссылка)
+10. В корне проекта создать папку "source", скачать файлы можно отсюда: (ссылка) В ней будут хранится файлы разработки проекта, такие как "components" - для подключаемых компонентов сайта, например меню и папка "pages" - страницы сайта. Base.pug хранит в себе шапку сайта, что в каждой странице едина и импортируется для удобства.
+
+11. Запуск: команда "yarn run start" запустит скрипт "start" и подгрузит в память webpack-dev-server для разработки. "Ctrl+С" остановит выполнение скрипта.
+
+
+
